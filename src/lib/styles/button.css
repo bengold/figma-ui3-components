@@ -1,0 +1,129 @@
+/* Button Component Styles */
+
+.figma-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Size variants */
+.figma-button--small {
+  padding: 4px 8px;
+  font-size: 9px;
+  line-height: 14px;
+}
+
+.figma-button--medium {
+  padding: 4px 8px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.figma-button--large {
+  padding: 8px 16px;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+/* Primary variant - Blue background */
+.figma-button--primary {
+  background-color: #0d99ff;
+  color: #ffffff;
+}
+
+.figma-button--primary:hover:not(:disabled) {
+  background-color: #0a7dd9;
+}
+
+.figma-button--primary:active:not(:disabled) {
+  background-color: #0966b3;
+}
+
+/* Secondary variant - Light background */
+.figma-button--secondary {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.figma-button--secondary:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.figma-button--secondary:active:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Tertiary variant - No background */
+.figma-button--tertiary {
+  background-color: transparent;
+  color: #0d99ff;
+}
+
+.figma-button--tertiary:hover:not(:disabled) {
+  background-color: rgba(13, 153, 255, 0.06);
+}
+
+.figma-button--tertiary:active:not(:disabled) {
+  background-color: rgba(13, 153, 255, 0.1);
+}
+
+/* Disabled state */
+.figma-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Full width */
+.figma-button--full-width {
+  width: 100%;
+}
+
+/* Focus state */
+.figma-button:focus-visible {
+  outline: 2px solid #0d99ff;
+  outline-offset: 2px;
+}
+
+/* Loading state (optional) */
+.figma-button--loading {
+  color: transparent;
+  pointer-events: none;
+}
+
+.figma-button--loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: button-spin 0.8s linear infinite;
+}
+
+.figma-button--secondary.figma-button--loading::after,
+.figma-button--tertiary.figma-button--loading::after {
+  border-color: rgba(0, 0, 0, 0.4);
+  border-top-color: transparent;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

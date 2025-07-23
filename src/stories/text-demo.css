@@ -1,0 +1,34 @@
+/* Styles for Text component stories */
+.text-story-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.text-story-box {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.text-story-article {
+  max-width: 600px;
+  padding: 32px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .text-story-row {
+    grid-template-columns: 1fr;
+  }
+}

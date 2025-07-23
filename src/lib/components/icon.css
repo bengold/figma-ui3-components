@@ -1,0 +1,57 @@
+/* Icon component styles */
+.figma-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* Size variants */
+.figma-icon--size-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.figma-icon--size-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.figma-icon--size-32 {
+  width: 32px;
+  height: 32px;
+}
+
+/* Color variants */
+.figma-icon--color-current {
+  fill: currentColor;
+}
+
+.figma-icon--color-primary {
+  fill: var(--color-text-primary, rgba(0, 0, 0, 0.9));
+}
+
+.figma-icon--color-secondary {
+  fill: var(--color-text-secondary, rgba(0, 0, 0, 0.5));
+}
+
+.figma-icon--color-tertiary {
+  fill: var(--color-text-tertiary, rgba(0, 0, 0, 0.4));
+}
+
+.figma-icon--color-error {
+  fill: var(--color-text-error, #d73502);
+}
+
+.figma-icon--color-success {
+  fill: var(--color-text-success, #0d9c56);
+}
+
+.figma-icon--color-white {
+  fill: white;
+}
+
+/* Ensure path elements inherit fill color */
+.figma-icon path {
+  fill: inherit;
+}
