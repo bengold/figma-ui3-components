@@ -1,0 +1,67 @@
+/* Figma UI3 Badge Dot Component Styles */
+@import '../../styles/figma-colors.css';
+
+/* Badge dot container */
+.figma-badge-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* Size variants */
+.figma-badge-dot--small {
+  width: 10px;
+  height: 10px;
+}
+
+.figma-badge-dot--medium {
+  width: 16px;
+  height: 16px;
+}
+
+/* The actual dot */
+.figma-badge-dot__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Medium size has a larger dot */
+.figma-badge-dot--medium .figma-badge-dot__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Color variants */
+.figma-badge-dot--default .figma-badge-dot__dot {
+  background-color: var(--figma-color-bg-tertiary);
+}
+
+.figma-badge-dot--brand .figma-badge-dot__dot {
+  background-color: var(--figma-color-bg-brand);
+}
+
+.figma-badge-dot--success .figma-badge-dot__dot {
+  background-color: var(--figma-color-bg-success);
+}
+
+.figma-badge-dot--danger .figma-badge-dot__dot {
+  background-color: var(--figma-color-bg-danger);
+}
+
+.figma-badge-dot--warning .figma-badge-dot__dot {
+  background-color: var(--figma-color-bg-warning);
+}
+
+.figma-badge-dot--neutral .figma-badge-dot__dot {
+  background-color: var(--figma-color-text-tertiary);
+}

@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Text from '$lib/components/Text.svelte';
-  import Icon from '$lib/components/Icon.svelte';
+  import Text from '$lib/components/text/text.svelte';
+  import Icon from '$lib/components/icon/icon.svelte';
+  import Button from '$lib/components/button/button.svelte';
 </script>
 
 <div class="container">
@@ -30,11 +31,21 @@
       
       <a href="/icons" class="nav-card">
         <div class="nav-icon">
-          <Icon name="settings" size={32} />
+          <Icon name="star" size={32} />
         </div>
         <Text variant="body-large-strong">Icons</Text>
         <Text variant="body-small" color="secondary">
           Icon library with multiple sizes and colors
+        </Text>
+      </a>
+      
+      <a href="/colors" class="nav-card">
+        <div class="nav-icon" style="background: linear-gradient(135deg, #0d99ff 0%, #007be5 100%);">
+          <Icon name="tint" size={32} color="white" />
+        </div>
+        <Text variant="body-large-strong">Colors</Text>
+        <Text variant="body-small" color="secondary">
+          Complete Figma UI3 color system
         </Text>
       </a>
     </div>

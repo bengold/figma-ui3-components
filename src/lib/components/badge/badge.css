@@ -1,0 +1,266 @@
+/* Figma UI3 Badge Component Styles */
+@import '../../styles/figma-colors.css';
+
+.figma-badge {
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex;
+  border-radius: 5px;
+  font-family: var(--font-family-base, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-weight: 450;
+  outline-offset: -1px;
+  word-wrap: break-word;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Size variants */
+.figma-badge--small {
+  font-size: 11px;
+  height: 16px;
+  letter-spacing: 0.055px;
+}
+
+.figma-badge--large {
+  font-size: 13px;
+  height: 22px;
+  letter-spacing: -0.0325px;
+}
+
+/* Badge text */
+.figma-badge__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
+  line-height: inherit;
+  height: 100%;
+}
+
+/* Adjust line height for different sizes */
+.figma-badge--small .figma-badge__text {
+  line-height: 16px;
+}
+
+.figma-badge--large .figma-badge__text {
+  line-height: 22px;
+}
+
+/* Remove left padding when there's a start icon */
+.figma-badge__icon + .figma-badge__text {
+  padding-left: 0;
+}
+
+/* Remove right padding when there's an end icon */
+.figma-badge__text:has(+ .figma-badge__icon) {
+  padding-right: 0;
+}
+
+/* Badge icons */
+.figma-badge__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Override icon component's display */
+.figma-badge__icon .figma-icon {
+  display: block;
+}
+
+/* Default variant */
+.figma-badge--default {
+  color: var(--figma-color-text);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border);
+}
+
+.figma-badge--default.figma-badge--strong {
+  background-color: var(--figma-color-bg-inverse);
+  color: var(--figma-color-text-oninverse);
+  border-color: transparent;
+}
+
+/* Brand variant */
+.figma-badge--brand {
+  color: var(--figma-color-text-brand);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-brand);
+}
+
+.figma-badge--brand.figma-badge--strong {
+  background-color: var(--figma-color-bg-brand);
+  color: var(--figma-color-text-onbrand);
+  border-color: transparent;
+}
+
+/* Component variant */
+.figma-badge--component {
+  color: var(--figma-color-text-component);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-component);
+}
+
+.figma-badge--component.figma-badge--strong {
+  background-color: var(--figma-color-bg-component);
+  color: var(--figma-color-text-oncomponent);
+  border-color: transparent;
+}
+
+/* Danger variant */
+.figma-badge--danger {
+  color: var(--figma-color-text-danger);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-danger);
+}
+
+.figma-badge--danger.figma-badge--strong {
+  background-color: var(--figma-color-bg-danger);
+  color: var(--figma-color-text-ondanger);
+  border-color: transparent;
+}
+
+/* Warning variant */
+.figma-badge--warn {
+  color: var(--figma-color-text-warning);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-warning);
+}
+
+.figma-badge--warn.figma-badge--strong {
+  background-color: var(--figma-color-bg-warning);
+  color: var(--figma-color-text-onwarning);
+  border-color: transparent;
+}
+
+/* Success variant */
+.figma-badge--success {
+  color: var(--figma-color-text-success);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-success);
+}
+
+.figma-badge--success.figma-badge--strong {
+  background-color: var(--figma-color-bg-success);
+  color: var(--figma-color-text-onsuccess);
+  border-color: transparent;
+}
+
+/* FigJam variant */
+.figma-badge--figjam {
+  color: var(--figma-color-text-component);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-component);
+}
+
+.figma-badge--figjam.figma-badge--strong {
+  background-color: var(--figma-color-bg-component);
+  color: var(--figma-color-text-oncomponent);
+  border-color: transparent;
+}
+
+/* Invert variant */
+.figma-badge--invert {
+  color: var(--figma-color-text);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border);
+}
+
+.figma-badge--invert.figma-badge--strong {
+  background-color: var(--figma-color-bg-inverse);
+  color: var(--figma-color-text-oninverse);
+  border-color: transparent;
+}
+
+/* Selected variant */
+.figma-badge--selected {
+  color: var(--figma-color-text-selected);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-selected);
+}
+
+/* Variable variant */
+.figma-badge--variable {
+  color: var(--figma-color-text);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border);
+}
+
+.figma-badge--variable .figma-badge__icon {
+  color: var(--figma-color-icon);
+}
+
+/* Variable Selected variant */
+.figma-badge--variable-selected {
+  color: var(--figma-color-text-selected);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-selected);
+}
+
+.figma-badge--variable-selected .figma-badge__icon {
+  color: var(--figma-color-icon-selected);
+}
+
+/* Feedback variant */
+.figma-badge--feedback {
+  color: var(--figma-color-text-selected);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border-brand);
+}
+
+/* Merged variant */
+.figma-badge--merged {
+  color: var(--figma-color-text-success);
+  background-color: var(--figma-color-bg);
+  border: 1px solid var(--figma-color-border-success);
+}
+
+.figma-badge--merged .figma-badge__icon {
+  color: var(--figma-color-icon-success);
+}
+
+/* Archived variant */
+.figma-badge--archived {
+  color: var(--figma-color-text-disabled);
+  background-color: var(--figma-color-bg);
+  border: 1px solid var(--figma-color-border-disabled);
+}
+
+.figma-badge--archived .figma-badge__icon {
+  color: var(--figma-color-icon-disabled);
+}
+
+/* Menu variant */
+.figma-badge--menu {
+  color: var(--figma-color-text);
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border);
+}
+
+.figma-badge--menu.figma-badge--strong {
+  background-color: var(--figma-color-bg-inverse);
+  color: var(--figma-color-text-oninverse);
+  border-color: transparent;
+}
+
+/* Dark mode support */
+:root .figma-dark .figma-badge--default,
+:root .figma-dark .figma-badge--invert,
+:root .figma-dark .figma-badge--variable,
+:root .figma-dark .figma-badge--menu {
+  color: var(--figma-color-text);
+  border-color: var(--figma-color-border);
+}
+
+:root .figma-dark .figma-badge--default.figma-badge--strong,
+:root .figma-dark .figma-badge--invert.figma-badge--strong,
+:root .figma-dark .figma-badge--menu.figma-badge--strong {
+  background-color: var(--figma-color-bg-inverse);
+  color: var(--figma-color-text-oninverse);
+}

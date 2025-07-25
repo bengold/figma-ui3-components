@@ -1,0 +1,166 @@
+/* Figma UI3 Tooltip Link Component Styles */
+@import '../../styles/figma-colors.css';
+
+/* Tooltip wrapper */
+.figma-tooltip-link-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  isolation: isolate;
+}
+
+/* Ensure no tooltip styles leak in */
+.figma-tooltip-link-wrapper .figma-tooltip {
+  display: none !important;
+}
+
+/* Base tooltip styles */
+.figma-tooltip-link {
+  position: absolute;
+  z-index: 9999;
+  background-color: var(--figma-color-bg-inverse);
+  border-radius: 5px;
+  box-shadow: 
+    0px 0px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 5px 12px 0px rgba(0, 0, 0, 0.13),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0ms 150ms, opacity 150ms ease-in-out;
+  font-family: var(--font-family-base, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  white-space: nowrap;
+  max-width: 400px;
+  /* Always position above */
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+}
+
+.figma-tooltip-link--visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0ms, opacity 150ms ease-in-out;
+  pointer-events: auto;
+}
+
+/* Content layout */
+.figma-tooltip-link__content {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  position: relative;
+  gap: 0;
+  width: 100%;
+}
+
+/* URL variant specific styles */
+.figma-tooltip-link--url .figma-tooltip-link__content {
+  padding: 4px 8px;
+}
+
+/* Other variants */
+.figma-tooltip-link:not(.figma-tooltip-link--url) .figma-tooltip-link__content {
+  padding: 0;
+}
+
+/* Icon styles */
+.figma-tooltip-link__icon {
+  color: var(--figma-color-icon-oninverse);
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Label styles */
+.figma-tooltip-link__label {
+  color: var(--figma-color-text-oninverse);
+  padding: 0 8px 0 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Input styles for URL variant */
+.figma-tooltip-link__input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--figma-color-text-oninverse);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+  flex: 1;
+  min-width: 150px;
+}
+
+.figma-tooltip-link__input::placeholder {
+  color: var(--figma-color-text-oninverse-secondary);
+}
+
+/* Separator styles */
+.figma-tooltip-link__separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--figma-color-border-secondary);
+  flex-shrink: 0;
+}
+
+/* Action button styles */
+.figma-tooltip-link__action {
+  background: none;
+  border: none;
+  padding: 0 8px;
+  height: 24px;
+  color: var(--figma-color-text-oninverse);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 150ms ease-in-out;
+}
+
+.figma-tooltip-link__action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.figma-tooltip-link__action--secondary {
+  font-weight: 600;
+}
+
+
+/* Arrow styles */
+.figma-tooltip-link__arrow {
+  position: absolute;
+  width: 12px;
+  height: 6px;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -6px;
+  transform: rotate(180deg);
+}
+
+.figma-tooltip-link__arrow path {
+  fill: var(--figma-color-bg-inverse);
+}
+

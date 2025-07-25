@@ -1,0 +1,180 @@
+/* Figma UI3 Tooltip Component Styles */
+@import '../../styles/figma-colors.css';
+
+/* Tooltip wrapper */
+.figma-tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Base tooltip styles */
+.figma-tooltip {
+  position: absolute;
+  z-index: 9999;
+  background-color: var(--figma-color-bg-inverse);
+  border-radius: 5px;
+  box-shadow: 
+    0px 0px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 5px 12px 0px rgba(0, 0, 0, 0.13),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0ms 150ms, opacity 150ms ease-in-out;
+  font-family: var(--font-family-base, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  white-space: nowrap;
+}
+
+.figma-tooltip--visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0ms, opacity 150ms ease-in-out;
+}
+
+/* Tooltip content */
+.figma-tooltip__content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  max-width: 200px;
+}
+
+.figma-tooltip__text {
+  color: var(--figma-color-text-oninverse);
+  flex: 1;
+  min-width: 0;
+}
+
+.figma-tooltip__shortcut {
+  color: var(--figma-color-text-oninverse-secondary);
+  flex-shrink: 0;
+}
+
+/* Arrow styles */
+.figma-tooltip__arrow {
+  position: absolute;
+  width: 12px;
+  height: 6px;
+}
+
+/* Placement variations */
+
+/* Top placements - arrow points down */
+.figma-tooltip--top,
+.figma-tooltip--top-start,
+.figma-tooltip--top-end {
+  bottom: 100%;
+  margin-bottom: 6px;
+}
+
+.figma-tooltip--top {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figma-tooltip--top-start {
+  left: 0;
+}
+
+.figma-tooltip--top-end {
+  right: 0;
+}
+
+.figma-tooltip--top .figma-tooltip__arrow,
+.figma-tooltip--top-start .figma-tooltip__arrow,
+.figma-tooltip--top-end .figma-tooltip__arrow {
+  bottom: -6px;
+  transform: rotate(180deg);
+}
+
+.figma-tooltip--top .figma-tooltip__arrow {
+  left: 50%;
+  margin-left: -6px;
+}
+
+.figma-tooltip--top-start .figma-tooltip__arrow {
+  left: 8px;
+}
+
+.figma-tooltip--top-end .figma-tooltip__arrow {
+  right: 8px;
+}
+
+/* Bottom placements - arrow points up */
+.figma-tooltip--bottom,
+.figma-tooltip--bottom-start,
+.figma-tooltip--bottom-end {
+  top: 100%;
+  margin-top: 6px;
+}
+
+.figma-tooltip--bottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figma-tooltip--bottom-start {
+  left: 0;
+}
+
+.figma-tooltip--bottom-end {
+  right: 0;
+}
+
+.figma-tooltip--bottom .figma-tooltip__arrow,
+.figma-tooltip--bottom-start .figma-tooltip__arrow,
+.figma-tooltip--bottom-end .figma-tooltip__arrow {
+  top: -6px;
+}
+
+.figma-tooltip--bottom .figma-tooltip__arrow {
+  left: 50%;
+  margin-left: -6px;
+}
+
+.figma-tooltip--bottom-start .figma-tooltip__arrow {
+  left: 8px;
+}
+
+.figma-tooltip--bottom-end .figma-tooltip__arrow {
+  right: 8px;
+}
+
+/* Left placement - arrow points right */
+.figma-tooltip--left {
+  right: 100%;
+  margin-right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.figma-tooltip--left .figma-tooltip__arrow {
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Right placement - arrow points left */
+.figma-tooltip--right {
+  left: 100%;
+  margin-left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.figma-tooltip--right .figma-tooltip__arrow {
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.figma-tooltip__arrow path {
+  fill: var(--figma-color-bg-inverse);
+}

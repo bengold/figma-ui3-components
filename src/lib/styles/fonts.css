@@ -1,0 +1,130 @@
+/* Figma UI3 Font Definitions */
+
+/* Inter Variable Font - Preferred for modern browsers */
+@font-face {
+  font-family: 'InterVariable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter/InterVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'InterVariable';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter/InterVariable-Italic.woff2') format('woff2-variations');
+}
+
+/* Inter Static Fonts - Fallback for older browsers */
+/* Weight 400 - Regular */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter/Inter-Regular.woff2') format('woff2');
+}
+
+/* Weight 450 - Medium (used in Figma UI3) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/fonts/Inter/Inter-Medium.woff2') format('woff2');
+}
+
+/* Weight 500 - Medium */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Inter/Inter-Medium.woff2') format('woff2');
+}
+
+/* Weight 600 - SemiBold */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter/Inter-SemiBold.woff2') format('woff2');
+}
+
+/* Weight 700 - Bold */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Inter/Inter-Bold.woff2') format('woff2');
+}
+
+/* Whyte Font Definitions - Display font */
+@font-face {
+  font-family: 'Whyte';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Whyte/ABCWhyte-Regular-Trial.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Whyte';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/fonts/Whyte/ABCWhyte-Medium-Trial.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Whyte';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Whyte/ABCWhyte-Medium-Trial.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Whyte';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Whyte/ABCWhyte-Bold-Trial.woff2') format('woff2');
+}
+
+/* CSS Custom Properties for font usage */
+:root {
+  /* Font families */
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-whyte: 'Whyte', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Use variable font when supported */
+  --font-family-base: var(--font-inter);
+  --font-family-display: var(--font-whyte);
+}
+
+/* Enable variable font features when supported */
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-family-base: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Optimize for different text sizes */
+  body {
+    font-optical-sizing: auto;
+  }
+}
+
+/* Base font settings */
+body {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}

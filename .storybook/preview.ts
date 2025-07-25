@@ -1,6 +1,11 @@
 import type { Preview } from '@storybook/sveltekit'
+import '../src/app.css';
+import ThemeDecorator from './decorators/theme-decorator.svelte';
 
 const preview: Preview = {
+  decorators: [
+    () => ThemeDecorator
+  ],
   parameters: {
     controls: {
       matchers: {

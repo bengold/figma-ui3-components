@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Text from '$lib/components/Text.svelte';
-  import Icon from '$lib/components/Icon.svelte';
+  import Text from '$lib/components/text/text.svelte';
+  import Icon from '$lib/components/icon/icon.svelte';
 </script>
 
 <div class="container">

@@ -1,0 +1,185 @@
+/* Figma UI3 Button Component Styles */
+
+.figma-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* spacer-1 */
+  font-family: var(--font-family-base, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-weight: 450; /* Inter Medium */
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.055px;
+  border: none;
+  border-radius: 5px; /* radius-medium */
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Size variants */
+.figma-button--default {
+  padding: 4px 8px; /* spacer-1 spacer-2 */
+  height: 24px;
+}
+
+.figma-button--large {
+  padding: 4px 12px; /* spacer-1 12px */
+  height: 32px;
+}
+
+/* Adjust padding when icon is present */
+.figma-button--default.figma-button--with-icon {
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+.figma-button--large.figma-button--with-icon {
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+/* Icon only buttons */
+.figma-button--icon-only {
+  padding: 4px;
+}
+
+.figma-button--icon-only.figma-button--default {
+  width: 24px;
+}
+
+.figma-button--icon-only.figma-button--large {
+  width: 32px;
+}
+
+/* Primary variant */
+.figma-button--primary {
+  background-color: var(--figma-color-bg-brand);
+  color: var(--figma-color-text-onbrand)
+}
+
+.figma-button--primary:hover:not(:disabled) {
+  background-color: var(--figma-color-bg-brand-hover);
+}
+
+.figma-button--primary:active:not(:disabled) {
+  background-color: var(--figma-color-bg-brand-pressed);
+}
+
+/* Secondary variant */
+.figma-button--secondary {
+  background-color: var(--figma-color-bg-secondary);
+  color: var(--figma-color-text);
+}
+
+.figma-button--secondary:hover:not(:disabled) {
+  background-color: var(--figma-color-bg-hover);
+}
+
+.figma-button--secondary:active:not(:disabled) {
+  background-color: var(--figma-color-bg-pressed);
+}
+
+/* Tertiary variant */
+.figma-button--tertiary {
+  background-color: transparent;
+  color: var(--figma-color-text-brand);
+}
+
+.figma-button--tertiary:hover:not(:disabled) {
+  background-color: var(--figma-color-bg-brand-tertiary);
+}
+
+.figma-button--tertiary:active:not(:disabled) {
+  background-color: var(--figma-color-bg-brand-tertiary);
+}
+
+/* Disabled state */
+.figma-button:disabled {
+  cursor: not-allowed;
+}
+
+.figma-button--primary:disabled {
+  background-color: var(--figma-color-bg-disabled);
+  color: var(--figma-color-text-ondisabled);
+}
+
+.figma-button--secondary:disabled,
+.figma-button--tertiary:disabled {
+  opacity: 0.4;
+}
+
+/* Focus state */
+.figma-button:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px var(--figma-color-bg) inset,
+    0 0 0 3px var(--figma-color-border-selected);
+}
+
+/* Full width */
+.figma-button--full-width {
+  width: 100%;
+}
+
+/* Button text */
+.figma-button__text {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Button icons */
+.figma-button__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.figma-button--primary .figma-button__icon {
+  color: var(--figma-color-icon-onbrand);
+}
+
+.figma-button--primary:disabled .figma-button__icon {
+  color: var(--figma-color-icon-ondisabled);
+}
+
+/* Loading state */
+.figma-button--loading {
+  pointer-events: none;
+}
+
+.figma-button--loading > * {
+  visibility: hidden;
+}
+
+.figma-button__spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: button-spin 0.8s linear infinite;
+}
+
+.figma-button--primary .figma-button__spinner {
+  border-color: var(--figma-color-bg);
+  border-top-color: transparent;
+}
+
+@keyframes button-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

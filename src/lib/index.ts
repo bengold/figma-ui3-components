@@ -1,7 +1,11 @@
 // Reexport your entry components here
-export { default as Text } from './components/Text.svelte';
-export { default as Icon } from './components/Icon.svelte';
-export { default as Button } from './components/Button.svelte';
+export { default as Text } from './components/text/text.svelte';
+export { default as Icon } from './components/icon/icon.svelte';
+export { default as Button } from './components/button/button.svelte';
+export { default as Badge } from './components/badge/badge.svelte';
+export { default as BadgeDot } from './components/badge-dot/badge-dot.svelte';
+export { default as Tooltip } from './components/tooltip/tooltip.svelte';
+export { default as TooltipLink } from './components/tooltip-link/tooltip-link.svelte';
 
 // Export typography tokens
 export { typography } from './tokens/typography.js';

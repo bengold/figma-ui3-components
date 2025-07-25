@@ -1,19 +1,26 @@
 <script lang="ts">
-  import Text from '$lib/components/Text.svelte';
-  import Icon from '$lib/components/Icon.svelte';
-  import { icons, type IconName } from '$lib/icons/index.js';
+  import Text from '$lib/components/text/text.svelte';
+  import Icon from '$lib/components/icon/icon.svelte';
+  import Button from '$lib/components/button/button.svelte';
+  import { iconsBySize, type IconName } from '$lib/icons/index.js';
   
-  let selectedIcon: IconName = 'settings';
-  let selectedSize: 16 | 24 | 32 = 24;
+  // Get all unique icon names across both sizes
+  const allIconNames = [...new Set([
+    ...Object.keys(iconsBySize[16]),
+    ...Object.keys(iconsBySize[24])
+  ])].sort();
+  
+  let selectedIcon: IconName = 'star';
+  let selectedSize: 16 | 24 = 16;
   let selectedColor: 'current' | 'primary' | 'secondary' | 'tertiary' | 'error' | 'success' | 'white' = 'primary';
   
-  const iconList = Object.keys(icons) as IconName[];
+  const iconList = allIconNames as IconName[];
 </script>
 
 <div class="container">
   <header>
     <a href="/" class="back-link">
-      <Icon name="chevron-left" size={16} />
+      <Icon name="chevron-down" size={16} />
       <Text variant="body">Back</Text>
     </a>
     <Text variant="display" as="h1" style="margin-top: 24px;">
@@ -55,10 +62,6 @@
             <label>
               <input type="radio" bind:group={selectedSize} value={24} />
               <Text variant="body-small">24px</Text>
-            </label>
-            <label>
-              <input type="radio" bind:group={selectedSize} value={32} />
-              <Text variant="body-small">32px</Text>
             </label>
           </div>
         </div>
@@ -151,7 +154,7 @@
       <Text variant="body-strong">Navigation</Text>
       <div class="example-content">
         <div class="nav-item">
-          <Icon name="chevron-left" size={16} />
+          <Icon name="arrow" size={16} />
           <Text variant="body">Back</Text>
         </div>
         <div class="nav-item">
